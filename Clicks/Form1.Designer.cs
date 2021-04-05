@@ -35,6 +35,7 @@ namespace JimsMacros
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnStartAll = new System.Windows.Forms.Button();
             this.btnStopAll = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSave
@@ -91,6 +92,15 @@ namespace JimsMacros
             this.btnStopAll.UseVisualStyleBackColor = true;
             this.btnStopAll.Click += new System.EventHandler(this.btnStopAll_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(292, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(303, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Note: The \"stop\" hotkey doesn\'t work when \"shift\" is selected.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -98,6 +108,7 @@ namespace JimsMacros
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(920, 687);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnStopAll);
             this.Controls.Add(this.btnStartAll);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -108,6 +119,7 @@ namespace JimsMacros
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,6 +129,7 @@ namespace JimsMacros
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnStartAll;
         private System.Windows.Forms.Button btnStopAll;
+        private Label label1;
     }
 }
 

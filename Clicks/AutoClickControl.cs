@@ -66,6 +66,7 @@ namespace JimsMacros
             txtKey.Text = autoSetting.keyToPress;
             chkHoldShift.Checked = autoSetting.holdShift;
             chkAutoStart.Checked = autoSetting.autoStart;
+            txtDelay.Text = autoSetting.delay.ToString();
             txtHoldTime.Text = autoSetting.holdTime.ToString();
         }
 
@@ -88,6 +89,7 @@ namespace JimsMacros
             autoSetting.label = txtName.Text;
             autoSetting.autoStart = chkAutoStart.Checked;
             autoSetting.holdTime = Convert.ToInt32(txtHoldTime.Text);
+            autoSetting.delay = Convert.ToInt32(txtDelay.Text);
         }
 
         private void txtKey_KeyDown(object sender, KeyEventArgs e)
@@ -213,7 +215,7 @@ namespace JimsMacros
                 return;
             isRunningAuto = true;
             keepRunning = true;
-            System.Threading.Thread.Sleep(3000); //delay before it starts
+            System.Threading.Thread.Sleep(autoSetting.delay); //delay before it starts
             while (keepRunning)
             {
                 Run();

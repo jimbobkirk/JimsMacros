@@ -44,6 +44,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtHoldTime = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtDelay = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnStart
@@ -104,7 +106,7 @@
             // 
             this.txtTimeBeforeBreak.Location = new System.Drawing.Point(715, 21);
             this.txtTimeBeforeBreak.Name = "txtTimeBeforeBreak";
-            this.txtTimeBeforeBreak.Size = new System.Drawing.Size(100, 20);
+            this.txtTimeBeforeBreak.Size = new System.Drawing.Size(52, 20);
             this.txtTimeBeforeBreak.TabIndex = 7;
             this.txtTimeBeforeBreak.Text = "5000";
             // 
@@ -196,11 +198,30 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Hold Time (ms)";
             // 
+            // txtDelay
+            // 
+            this.txtDelay.Location = new System.Drawing.Point(715, 73);
+            this.txtDelay.Name = "txtDelay";
+            this.txtDelay.Size = new System.Drawing.Size(52, 20);
+            this.txtDelay.TabIndex = 20;
+            this.txtDelay.Text = "3000";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(626, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Delay (ms)";
+            // 
             // AutoClickControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.txtDelay);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.txtHoldTime);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnDelete);
@@ -241,5 +262,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtHoldTime;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDelay;
+        private System.Windows.Forms.Label label5;
     }
 }

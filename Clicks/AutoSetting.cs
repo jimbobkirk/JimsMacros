@@ -17,5 +17,6 @@ namespace JimsMacros
         public bool holdShift = false;
         public bool autoStart = true;
         public int holdTime = 10;
+        public int delay = 3000;
     }
 }
