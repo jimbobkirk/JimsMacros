@@ -14,6 +14,9 @@ namespace JimsMacros
 {
     public partial class Form1 : Form
     {
+        KeyHandler keyHandlerStart;
+        KeyHandler keyHandlerStop;
+
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +34,44 @@ namespace JimsMacros
                 autoClickControl.SetSettingsFromSettings(setting);
                 AddLayoutControl(autoClickControl);
             }
+            RegisterHotkeys();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UnregisterHotkeys();
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            if (m.Msg == Constants.WM_HOTKEY_MSG_ID)
+                HandleHotkey(m.WParam.ToInt32());
+            base.WndProc(ref m);
+        }
+
+        private void HandleHotkey(int key)
+        {
+            if (key == keyHandlerStart.GetHashCode())
+            {
+                StartAll();
+            }
+            if (key == keyHandlerStop.GetHashCode())
+            {
+                StopAll();
+            }
+        }
+
+        private void RegisterHotkeys()
+        {
+            keyHandlerStart = new KeyHandler(Keys.F7, this);
+            keyHandlerStart.Register();
+            keyHandlerStop = new KeyHandler(Keys.F8, this);
+            keyHandlerStop.Register();
+        }
+
+        private void UnregisterHotkeys()
+        {
+            keyHandlerStart.Register();
         }
 
         private void btnAddAction_Click(object sender, EventArgs e)
@@ -64,6 +105,16 @@ namespace JimsMacros
 
         private void btnStartAll_Click(object sender, EventArgs e)
         {
+            StartAll();
+        }
+
+        private void btnStopAll_Click(object sender, EventArgs e)
+        {
+            StopAll();
+        }
+
+        private void StartAll()
+        {
             foreach (var cotrl in tableLayoutPanel1.Controls)
             {
                 AutoClickControl ctrl = ((AutoClickControl)cotrl);
@@ -73,8 +124,7 @@ namespace JimsMacros
                 }
             }
         }
-
-        private void btnStopAll_Click(object sender, EventArgs e)
+        private void StopAll()
         {
             foreach (var cotrl in tableLayoutPanel1.Controls)
             {

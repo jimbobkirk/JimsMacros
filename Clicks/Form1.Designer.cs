@@ -39,7 +39,7 @@ namespace JimsMacros
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(244, 12);
+            this.btnSave.Location = new System.Drawing.Point(752, 12);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 3;
@@ -49,7 +49,7 @@ namespace JimsMacros
             // 
             // btnAddAction
             // 
-            this.btnAddAction.Location = new System.Drawing.Point(325, 12);
+            this.btnAddAction.Location = new System.Drawing.Point(833, 12);
             this.btnAddAction.Name = "btnAddAction";
             this.btnAddAction.Size = new System.Drawing.Size(75, 23);
             this.btnAddAction.TabIndex = 4;
@@ -75,19 +75,19 @@ namespace JimsMacros
             // 
             this.btnStartAll.Location = new System.Drawing.Point(13, 11);
             this.btnStartAll.Name = "btnStartAll";
-            this.btnStartAll.Size = new System.Drawing.Size(75, 23);
+            this.btnStartAll.Size = new System.Drawing.Size(120, 45);
             this.btnStartAll.TabIndex = 7;
-            this.btnStartAll.Text = "Start All";
+            this.btnStartAll.Text = "Start All (F7)";
             this.btnStartAll.UseVisualStyleBackColor = true;
             this.btnStartAll.Click += new System.EventHandler(this.btnStartAll_Click);
             // 
             // btnStopAll
             // 
-            this.btnStopAll.Location = new System.Drawing.Point(94, 11);
+            this.btnStopAll.Location = new System.Drawing.Point(169, 11);
             this.btnStopAll.Name = "btnStopAll";
-            this.btnStopAll.Size = new System.Drawing.Size(75, 23);
+            this.btnStopAll.Size = new System.Drawing.Size(117, 45);
             this.btnStopAll.TabIndex = 8;
-            this.btnStopAll.Text = "Stop All";
+            this.btnStopAll.Text = "Stop All (F8)";
             this.btnStopAll.UseVisualStyleBackColor = true;
             this.btnStopAll.Click += new System.EventHandler(this.btnStopAll_Click);
             // 
@@ -105,6 +105,7 @@ namespace JimsMacros
             this.Controls.Add(this.btnSave);
             this.Name = "Form1";
             this.Text = "JimsMacros";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
